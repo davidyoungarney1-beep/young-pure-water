@@ -1,265 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Young Pure Water Company</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            background: #eef7ff;
-            color: #333;
-        }
+<title>Young Pure Water Company</title>
 
-        header {
-            background: linear-gradient(135deg, #0099ff, #004aad);
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
+<style>
 
-        .logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid white;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
-        nav {
-            background: #003d80;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 18px;
-            padding: 15px;
-            position: sticky;
-            top: 0;
-        }
+body{
+background:#eef7ff;
+color:#333;
+}
 
-        nav a {
-            text-decoration: none;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 12px;
-            font-weight: bold;
-        }
+header{
+background:linear-gradient(135deg,#0099ff,#004aad);
+padding:20px;
+color:#fff;
+box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
 
-        .icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: #00b4db;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,.25);
-            transition: .3s;
-        }
+.header-content{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:18px;
+}
 
-        nav a span {
-            margin-top: 6px;
-        }
+.logo{
+width:85px;
+height:85px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #fff;
+box-shadow:0 4px 10px rgba(0,0,0,.3);
+}
 
-        nav a:hover .icon {
-            background: white;
-            color: #004aad;
-            transform: scale(1.1);
-        }
+.company-text h1{
+font-size:32px;
+margin-bottom:6px;
+}
 
-        .hero {
-            background: linear-gradient(rgba(0,70,140,.7), rgba(0,70,140,.7)),
-                        url('imagepic.png') center/cover;
-            padding: 100px 20px;
-            text-align: center;
-            color: white;
-        }
+.company-text p{
+font-size:17px;
+opacity:.95;
+}
 
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
+nav{
+background:#003d80;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+padding:15px;
+position:sticky;
+top:0;
+z-index:1000;
+}
 
-        .hero p {
-            margin-bottom: 25px;
-            font-size: 18px;
-        }
+.nav-btn{
+background:#00b4db;
+color:#fff;
+text-decoration:none;
+text-align:center;
+padding:13px 10px;
+border-radius:30px;
+font-weight:bold;
+transition:.3s;
+}
 
-        .btn {
-            display: inline-block;
-            background: #00b4db;
-            color: white;
-            text-decoration: none;
-            padding: 14px 30px;
-            border-radius: 30px;
-        }
+.nav-btn:hover{
+background:#fff;
+color:#004aad;
+}
 
-        .btn:hover {
-            background: #004aad;
-        }
+.hero{
+background:
+linear-gradient(rgba(0,70,140,.75),rgba(0,70,140,.75)),
+url("imagepic.png") center/cover;
+color:#fff;
+text-align:center;
+padding:100px 20px;
+}
 
-        .about,
-        .services {
-            padding: 50px 20px;
-            text-align: center;
-        }
+.hero h2{
+font-size:42px;
+margin-bottom:20px;
+}
 
-        .cards {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
+.hero p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
+}
 
-        .card {
-            background: white;
-            width: 260px;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,.15);
-        }
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:#00b4db;
+color:#fff;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+transition:.3s;
+}
 
-        .contact {
-            background: #004aad;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
+.btn:hover{
+background:#003d80;
+}
 
-        footer {
-            background: #002855;
-            color: white;
-            text-align: center;
-            padding: 18px;
-        }
+@media(max-width:768px){
 
-        .whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 24px;
-        }
-    </style>
+.header-content{
+justify-content:center;
+gap:12px;
+}
+
+.logo{
+width:65px;
+height:65px;
+}
+
+.company-text h1{
+font-size:22px;
+}
+
+.company-text p{
+font-size:14px;
+}
+
+nav{
+grid-template-columns:repeat(4,1fr);
+}
+
+.nav-btn{
+font-size:12px;
+padding:12px 5px;
+}
+
+.hero h2{
+font-size:30px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-    <header>
-        <img src="zogo.jpg" class="logo" alt="Company Logo">
-        <h1>Young Pure Water Company</h1>
-        <p>💧 Clean Water • Healthy Living</p>
-    </header>
+<header>
 
-    <nav>
-        <a href="index.html">
-            <div class="icon">🏠</div>
-            <span>Home</span>
-        </a>
+<div class="header-content">
 
-        <a href="products.html">
-            <div class="icon">💧</div>
-            <span>Products</span>
-        </a>
+<img src="zogo.jpg" class="logo" alt="Company Logo">
 
-        <a href="drivers.html">
-            <div class="icon">🚚</div>
-            <span>Drivers</span>
-        </a>
+<div class="company-text">
+<h1>Young Pure Water Company</h1>
+<p>Clean Water • Healthy Living</p>
+</div>
 
-        <a href="security.html">
-            <div class="icon">🛡️</div>
-            <span>Security</span>
-        </a>
+</div>
 
-        <a href="account.html">
-            <div class="icon">👤</div>
-            <span>Account</span>
-        </a>
+</header>
 
-        <a href="contact.html">
-            <div class="icon">📞</div>
-            <span>Contact</span>
-        </a>
+<nav>
 
-        <a href="about.html">
-            <div class="icon">ℹ️</div>
-            <span>About</span>
-        </a>
-    </nav>
+<a href="index.html" class="nav-btn">Home</a>
 
-    <section class="hero">
-        <h1>Pure, Safe & Refreshing Water</h1>
+<a href="products.html" class="nav-btn">Products</a>
 
-        <p>
-            We provide hygienic sachet and bottled water for homes,
-            schools, offices, and businesses.
-        </p>
+<a href="drivers.html" class="nav-btn">Drivers</a>
 
-        <a href="products.html" class="btn">Order Now</a>
-    </section>
+<a href="security.html" class="nav-btn">Security</a>
 
-    <section class="about">
-        <h2>About Us</h2>
+<a href="account.html" class="nav-btn">Accountant</a>
 
-        <p>
-            We are committed to producing clean,
-            affordable, and high-quality drinking water.
-        </p>
-    </section>
+<a href="contact.html" class="nav-btn">Contact</a>
 
-    <section class="services">
-        <div class="cards">
+<a href="about.html" class="nav-btn">About</a>
 
-            <div class="card">
-                <h3>💧 Quality</h3>
-                <p>Clean and hygienic drinking water.</p>
-            </div>
+</nav>
 
-            <div class="card">
-                <h3>🚚 Delivery</h3>
-                <p>Fast delivery to your location.</p>
-            </div>
+<section class="hero">
 
-            <div class="card">
-                <h3>⭐ Trusted</h3>
-                <p>Customer satisfaction is our priority.</p>
-            </div>
+<h2>Pure, Safe & Refreshing Water</h2>
 
-        </div>
-    </section>
+<p>
+Young Pure Water Company provides high-quality sachet and bottled drinking water for homes, offices, schools, hotels, restaurants, events and businesses. We are committed to delivering clean, hygienic and affordable drinking water every day.
+</p>
 
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <p>📍 Anwai Road Asaba </p>
-        <p>📞 +234 9023484119</p>
-        <p>✉️ davidyoungarney1@gmail.com</p>
-    </section>
+<a href="products.html" class="btn">Order Now</a>
 
-    <footer>
-        &copy; 2026 Young Pure Water Company. All Rights Reserved.
-    </footer>
+</section>
+<style>
 
-    <a href="https://wa.me/2349023484119" class="whatsapp">💬</a>
+.about{
+padding:70px 20px;
+background:#ffffff;
+text-align:center;
+}
+
+.about h2{
+font-size:34px;
+color:#004aad;
+margin-bottom:20px;
+}
+
+.about p{
+max-width:850px;
+margin:auto;
+font-size:17px;
+line-height:1.8;
+color:#555;
+}
+
+.services{
+padding:70px 20px;
+background:#eef7ff;
+text-align:center;
+}
+
+.services h2{
+font-size:34px;
+color:#004aad;
+margin-bottom:40px;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+}
+
+.card{
+background:#fff;
+width:300px;
+padding:30px 25px;
+border-radius:18px;
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+color:#004aad;
+margin-bottom:15px;
+font-size:24px;
+}
+
+.card p{
+font-size:16px;
+line-height:1.7;
+color:#666;
+}
+
+@media(max-width:768px){
+
+.about h2,
+.services h2{
+font-size:28px;
+}
+
+.about p{
+font-size:16px;
+}
+
+.cards{
+flex-direction:column;
+align-items:center;
+}
+
+.card{
+width:100%;
+max-width:340px;
+}
+
+}
+
+</style>
+
+<section class="about">
+
+<h2>About Us</h2>
+
+<p>
+Young Pure Water Company is committed to producing premium-quality drinking water using modern purification processes and hygienic packaging. Our goal is to provide safe, refreshing and affordable water for homes, schools, offices, hotels, restaurants, events and businesses while maintaining excellent customer service and reliable delivery.
+</p>
+
+</section>
+
+<section class="services">
+
+<h2>Why Choose Us</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Quality Water</h3>
+
+<p>
+Every sachet and bottle is produced under strict quality control to ensure purity, freshness and safe drinking for everyone.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Fast Delivery</h3>
+
+<p>
+We provide prompt delivery services to homes, offices, schools, shops, hotels and event locations at competitive prices.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Trusted Service</h3>
+
+<p>
+Our dedicated team focuses on customer satisfaction by providing dependable service, consistent quality and timely supply.
+</p>
+
+</div>
+
+</div>
+
+</section>
+<style>
+
+.contact{
+background:linear-gradient(135deg,#004aad,#0066cc);
+color:#fff;
+padding:70px 20px;
+text-align:center;
+}
+
+.contact h2{
+font-size:34px;
+margin-bottom:20px;
+}
+
+.contact p{
+font-size:18px;
+margin:12px 0;
+line-height:1.7;
+}
+
+.contact .btn{
+background:#fff;
+color:#004aad;
+}
+
+.contact .btn:hover{
+background:#00b4db;
+color:#fff;
+}
+
+footer{
+background:#002855;
+color:#fff;
+text-align:center;
+padding:25px 20px;
+font-size:15px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+text-decoration:none;
+font-size:28px;
+box-shadow:0 8px 18px rgba(0,0,0,.3);
+transition:.3s;
+z-index:999;
+}
+
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+@media(max-width:768px){
+
+.contact h2{
+font-size:28px;
+}
+
+.contact p{
+font-size:16px;
+}
+
+footer{
+font-size:14px;
+}
+
+.whatsapp{
+width:55px;
+height:55px;
+font-size:26px;
+}
+
+}
+
+</style>
+
+<section class="contact">
+
+<h2>Contact Us</h2>
+
+<p><strong>Address:</strong> Anwai Road, Asaba, Delta State</p>
+
+<p><strong>Phone:</strong> +234 902 348 4119</p>
+
+<p><strong>Email:</strong> davidyoungarney1@gmail.com</p>
+
+<a href="contact.html" class="btn">Send a Message</a>
+
+</section>
+
+<footer>
+
+<p>&copy; 2026 Young Pure Water Company. All Rights Reserved.</p>
+
+</footer>
+
+<a href="https://wa.me/2349023484119"
+class="whatsapp"
+target="_blank"
+title="WhatsApp">
+
+💬
+
+</a>
 
 </body>
 </html>
