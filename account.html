@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Account Department - Young Pure Water Company</title>
+
+<title>Accounts Department - Young Pure Water Company</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -20,87 +23,108 @@ color:#333;
 
 header{
 background:linear-gradient(135deg,#0099ff,#004aad);
-color:white;
-text-align:center;
-padding:30px;
+padding:20px;
+color:#fff;
+box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.header-content{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:18px;
 }
 
 .logo{
-width:120px;
-height:120px;
+width:85px;
+height:85px;
 border-radius:50%;
-border:4px solid white;
+object-fit:cover;
+border:4px solid #fff;
+box-shadow:0 4px 10px rgba(0,0,0,.3);
+}
+
+.company-text h1{
+font-size:32px;
+margin-bottom:6px;
+}
+
+.company-text p{
+font-size:17px;
+opacity:.95;
 }
 
 nav{
 background:#003d80;
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:18px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
 padding:15px;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-nav a{
-text-decoration:none;
-color:white;
-display:flex;
-flex-direction:column;
-align-items:center;
-font-size:12px;
-font-weight:bold;
-}
-
-.icon{
-width:45px;
-height:45px;
-border-radius:50%;
+.nav-btn{
 background:#00b4db;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:20px;
-box-shadow:0 4px 8px rgba(0,0,0,.25);
+color:#fff;
+text-decoration:none;
+text-align:center;
+padding:13px 10px;
+border-radius:30px;
+font-weight:bold;
 transition:.3s;
 }
 
-nav a span{
-margin-top:6px;
+.nav-btn:hover{
+background:#fff;
+color:#004aad;
 }
 
-nav a:hover .icon{
-background:white;
-color:#004aad;
-transform:scale(1.1);
+.hero{
+background:
+linear-gradient(rgba(0,70,140,.75),rgba(0,70,140,.75)),
+url("account-banner.jpg") center/cover;
+color:#fff;
+text-align:center;
+padding:100px 20px;
+}
+
+.hero h2{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
 }
 
 .container{
-max-width:1100px;
-margin:40px auto;
-padding:20px;
-}
-
-h2{
-text-align:center;
-color:#004aad;
-margin-bottom:30px;
+max-width:1200px;
+margin:auto;
+padding:70px 20px;
 }
 
 .team{
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-gap:25px;
+gap:30px;
 }
 
 .card{
-background:white;
-width:280px;
-padding:20px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.15);
-text-align:center;
+background:#fff;
+width:320px;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.12);
 transition:.3s;
+text-align:center;
 }
 
 .card:hover{
@@ -108,46 +132,112 @@ transform:translateY(-8px);
 }
 
 .card img{
-width:150px;
-height:150px;
+width:170px;
+height:170px;
 border-radius:50%;
 object-fit:cover;
-border:4px solid #0099ff;
-margin-bottom:15px;
+border:5px solid #0099ff;
+margin:25px auto 15px;
+display:block;
+}
+
+.card-content{
+padding:0 25px 25px;
 }
 
 .card h3{
 color:#004aad;
 margin-bottom:10px;
+font-size:24px;
+}
+
+.position{
+color:#00a651;
+font-weight:bold;
+margin-bottom:15px;
 }
 
 .card p{
-line-height:1.6;
+font-size:16px;
+line-height:1.7;
+color:#666;
 }
 
 footer{
 background:#002855;
-color:white;
+color:#fff;
 text-align:center;
-padding:18px;
-margin-top:40px;
+padding:25px;
+margin-top:50px;
 }
 
 .whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
+width:60px;
+height:60px;
 background:#25D366;
-width:55px;
-height:55px;
 border-radius:50%;
 display:flex;
-justify-content:center;
 align-items:center;
-color:white;
+justify-content:center;
+color:#fff;
+font-size:28px;
 text-decoration:none;
-font-size:24px;
+box-shadow:0 8px 18px rgba(0,0,0,.3);
+transition:.3s;
+z-index:999;
 }
+
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+@media(max-width:768px){
+
+.header-content{
+justify-content:center;
+gap:12px;
+}
+
+.logo{
+width:65px;
+height:65px;
+}
+
+.company-text h1{
+font-size:22px;
+}
+
+.company-text p{
+font-size:14px;
+}
+
+nav{
+grid-template-columns:repeat(4,1fr);
+}
+
+.nav-btn{
+font-size:12px;
+padding:12px 5px;
+}
+
+.hero h2{
+font-size:30px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.card{
+width:100%;
+max-width:340px;
+}
+
+}
+
 </style>
 
 </head>
@@ -156,47 +246,65 @@ font-size:24px;
 
 <header>
 
+<div class="header-content">
+
 <img src="zogo.jpg" class="logo" alt="Company Logo">
 
+<div class="company-text">
 <h1>Young Pure Water Company</h1>
+<p>Clean Water • Healthy Living</p>
+</div>
 
-<p>💧 Clean Water • Healthy Living</p>
+</div>
 
 </header>
 
 <nav>
 
-<a href="index.html"><div class="icon">🏠</div><span>Home</span></a>
+<a href="index.html" class="nav-btn">Home</a>
 
-<a href="products.html"><div class="icon">💧</div><span>Products</span></a>
+<a href="products.html" class="nav-btn">Products</a>
 
-<a href="drivers.html"><div class="icon">🚚</div><span>Drivers</span></a>
+<a href="drivers.html" class="nav-btn">Drivers</a>
 
-<a href="security.html"><div class="icon">🛡️</div><span>Security</span></a>
+<a href="security.html" class="nav-btn">Security</a>
 
-<a href="account.html"><div class="icon">👤</div><span>Account</span></a>
+<a href="account.html" class="nav-btn">Accountant</a>
 
-<a href="contact.html"><div class="icon">📞</div><span>Contact</span></a>
+<a href="contact.html" class="nav-btn">Contact</a>
 
-<a href="about.html"><div class="icon">ℹ️</div><span>About</span></a>
+<a href="about.html" class="nav-btn">About</a>
 
 </nav>
 
-<div class="container">
+<section class="hero">
 
 <h2>Our Accounts Department</h2>
 
-<div class="team">
+<p>
+Our Accounts Department ensures accurate financial management, customer payment processing, budgeting and transparent record keeping to support the smooth operation of our company.
+</p>
 
-<div class="card">
+</section>
+
+<div class="container">
+
+<div class="team">
+  <div class="card">
 
 <img src="account1.jpg" alt="Chief Accountant">
 
+<div class="card-content">
+
 <h3>Mrs. Grace Okafor</h3>
 
-<p><strong>Chief Accountant</strong></p>
+<p class="position">Chief Accountant</p>
 
-<p>Manages the company's financial records, budgeting, payroll, and prepares financial reports.</p>
+<p>
+Oversees the company's financial records, budgeting, payroll, taxation and prepares accurate financial reports to support business growth.
+</p>
+
+</div>
 
 </div>
 
@@ -204,11 +312,17 @@ font-size:24px;
 
 <img src="account2.jpg" alt="Account Officer">
 
+<div class="card-content">
+
 <h3>Mr. Daniel Eze</h3>
 
-<p><strong>Account Officer</strong></p>
+<p class="position">Account Officer</p>
 
-<p>Handles customer payments, invoices, receipts, and daily financial transactions.</p>
+<p>
+Handles customer payments, invoices, receipts and daily financial transactions while ensuring accurate accounting records.
+</p>
+
+</div>
 
 </div>
 
@@ -216,11 +330,17 @@ font-size:24px;
 
 <img src="account3.jpg" alt="Cashier">
 
+<div class="card-content">
+
 <h3>Miss Esther John</h3>
 
-<p><strong>Cashier</strong></p>
+<p class="position">Cashier</p>
 
-<p>Processes customer payments, issues receipts, and maintains accurate cash records.</p>
+<p>
+Processes customer payments, issues receipts and maintains accurate cash records with excellent customer service.
+</p>
+
+</div>
 
 </div>
 
@@ -230,11 +350,18 @@ font-size:24px;
 
 <footer>
 
-&copy; 2026 Young Pure Water Company. All Rights Reserved.
+<p>&copy; 2026 Young Pure Water Company. All Rights Reserved.</p>
 
 </footer>
 
-<a href="https://wa.me/2349023484119" class="whatsapp">💬</a>
+<a href="https://wa.me/2349023484119"
+class="whatsapp"
+target="_blank"
+title="Chat with us on WhatsApp">
+
+💬
+
+</a>
 
 </body>
-</html>
+  </html>
