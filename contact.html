@@ -104,46 +104,82 @@ font-size:18px;
 line-height:1.8;
 }
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:70px 20px;
-}
-
-.contact-box{
+.contact-section{
+max-width:900px;
+margin:60px auto;
 background:#fff;
-padding:35px;
+padding:40px;
 border-radius:18px;
 box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
-.contact-box h2{
+.contact-section h2{
 text-align:center;
 color:#004aad;
-margin-bottom:25px;
+margin-bottom:30px;
 font-size:34px;
 }
 
-.contact-info p{
-font-size:18px;
-margin:18px 0;
-line-height:1.7;
+form{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+input,
+textarea{
+width:100%;
+padding:15px;
+border:2px solid #ddd;
+border-radius:10px;
+font-size:16px;
+outline:none;
+transition:.3s;
+}
+
+input:focus,
+textarea:focus{
+border-color:#0099ff;
+}
+
+textarea{
+resize:vertical;
+min-height:150px;
 }
 
 .btn{
 display:inline-block;
-margin-top:25px;
-padding:15px 35px;
+padding:15px;
 background:#00b4db;
 color:#fff;
 text-decoration:none;
+border:none;
 border-radius:30px;
+font-size:18px;
 font-weight:bold;
+cursor:pointer;
 transition:.3s;
 }
 
 .btn:hover{
 background:#004aad;
+}
+
+.info{
+margin-top:40px;
+background:#eef7ff;
+padding:25px;
+border-radius:15px;
+}
+
+.info h3{
+color:#004aad;
+margin-bottom:15px;
+}
+
+.info p{
+margin:12px 0;
+font-size:17px;
 }
 
 footer{
@@ -166,8 +202,8 @@ display:flex;
 align-items:center;
 justify-content:center;
 color:#fff;
-font-size:28px;
 text-decoration:none;
+font-size:28px;
 box-shadow:0 8px 18px rgba(0,0,0,.3);
 z-index:999;
 }
@@ -209,12 +245,9 @@ font-size:30px;
 font-size:16px;
 }
 
-.contact-box{
+.contact-section{
+margin:30px 15px;
 padding:25px;
-}
-
-.contact-info p{
-font-size:16px;
 }
 
 }
@@ -243,17 +276,11 @@ font-size:16px;
 <nav>
 
 <a href="index.html" class="nav-btn">Home</a>
-
 <a href="products.html" class="nav-btn">Products</a>
-
 <a href="drivers.html" class="nav-btn">Drivers</a>
-
 <a href="security.html" class="nav-btn">Security</a>
-
 <a href="account.html" class="nav-btn">Accountant</a>
-
 <a href="contact.html" class="nav-btn">Contact</a>
-
 <a href="about.html" class="nav-btn">About</a>
 
 </nav>
@@ -263,19 +290,39 @@ font-size:16px;
 <h2>Contact Us</h2>
 
 <p>
-We are always ready to serve you. Contact us today for enquiries, orders or delivery requests.
+Have questions or want to place an order? Send us a message and we'll get back to you as soon as possible.
 </p>
 
 </section>
 
-<div class="container">
+<section class="contact-section">
 
-<div class="contact-box">
+<h2>Send Us a Message</h2>
 
-<h2>Get In Touch</h2>
+<form action="https://formsubmit.co/davidyoungarney1@gmail.com" method="POST">
 
-<div class="contact-info">
-  <p><strong>📍 Address:</strong> Anwai Road, Asaba, Delta State, Nigeria.</p>
+<input type="hidden" name="_captcha" value="false">
+
+<input type="hidden" name="_subject" value="New Message From Young Pure Water Website">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<input type="tel" name="phone" placeholder="Phone Number">
+
+<input type="text" name="subject" placeholder="Subject" required>
+
+<textarea name="message" placeholder="Type your message here..." required></textarea>
+<button type="submit" class="btn">Send Message</button>
+
+</form>
+
+<div class="info">
+
+<h3>Contact Information</h3>
+
+<p><strong>📍 Address:</strong> Anwai Road, Asaba, Delta State, Nigeria</p>
 
 <p><strong>📞 Phone:</strong> +234 902 348 4119</p>
 
@@ -283,13 +330,16 @@ We are always ready to serve you. Contact us today for enquiries, orders or deli
 
 <p><strong>🕒 Working Hours:</strong> Monday - Saturday | 8:00 AM - 6:00 PM</p>
 
-<a href="https://wa.me/2349023484119" class="btn" target="_blank">
+<a href="https://wa.me/2349023484119"
+class="btn"
+target="_blank"
+style="margin-top:15px;display:inline-block;">
 Chat With Us on WhatsApp
 </a>
 
 </div>
 
-</div>
+</section>
 
 <footer>
 
@@ -307,4 +357,4 @@ title="Chat with us on WhatsApp">
 </a>
 
 </body>
-</html>
+  </html>
